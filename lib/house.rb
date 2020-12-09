@@ -63,5 +63,20 @@ class House
   end
 
 
+  def rooms_sorted_by_area
+    i = 0
+    counter = rooms.count - 1
+        rooms = @rooms
+      counter.times do
+        if rooms[i].area < rooms[i+1].area
+         rooms[i], rooms[i+1] = rooms[i+1], rooms[i]
+        end
+        i+=1
+      end
+      rooms
+  end
+
+
+
 
 end
