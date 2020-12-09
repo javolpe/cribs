@@ -54,5 +54,14 @@ class House
     details_hash
   end
 
+  def price_per_square_foot
+    price_integer = @price.gsub("$", "")
+    price_integer = price_integer.to_f
+
+    final = price_integer / area
+    final.round(2)
+  end
+
+
 
 end
