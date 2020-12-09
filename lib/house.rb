@@ -1,3 +1,5 @@
+require './lib/room'
+
 class House
   attr_accessor :rooms
 
@@ -16,9 +18,11 @@ class House
   end
 
   def above_market_average?
-    if price.to_i > 500000
+    price_integer = @price.gsub("$", "")
+
+    if price_integer.to_i > 500000
       true
-    elsif price.to_i < 500000
+    elsif price_integer.to_i < 500000
       false
     end
   end
@@ -41,7 +45,14 @@ class House
     total_area
   end
 
-  
+  def details
+    details_hash = Hash.new(0)
+      price_integer = @price.gsub("$", "")
+      details_hash["price"]   = price_integer.to_i
+      details_hash["address"] = @address
+
+    details_hash
+  end
 
 
 end
