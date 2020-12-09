@@ -76,6 +76,15 @@ class House
       rooms
   end
 
+  # def rooms_by_category
+  #   room_category = Hash.new {|h, k| h[k] = ''}
+  #   rooms.each do |room|
+  #     if room_category[rooms.category]
+  #         room_category[rooms.category].push(room)
+  #
+  #       end
+  # end
+##ran out time
 
 
 
